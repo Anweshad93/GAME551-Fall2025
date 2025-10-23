@@ -3,7 +3,7 @@ require('greenlock-express').create({
   version: 'draft-11'
 , server: 'https://acme-v02.api.letsencrypt.org/directory'
 //, server: 'https://acme-staging-v02.api.letsencrypt.org/directory'  // staging
-, email: ''                                     // CHANGE THIS
+, email: 'anweshad@asu.edu'                                     // CHANGE THIS
 , agreeTos: true
 , approveDomains: [ 'anweshad.httpsexample.xyz', 'www.anweshad.httpsexample.xyz' ]              // CHANGE THIS
 , store: require('greenlock-store-fs')
