@@ -46,7 +46,10 @@
             renderer.render(scene, camera);
         }
         renderer.setAnimationLoop(animate); // Use XR animation loop
-    
+    </script>
+<script src='asyncReq.js'></script>
+
+    <script>
     var main = function(){
   // check whether user is logged in
   loadFile("/loginStatus", function(data){
@@ -69,39 +72,10 @@ var doLogout = function()
 }
     
     </script>
-     <script src='asyncReq.js'></script>
-<script>
-var main = function(){
-  // check whether user is logged in
-  loadFile("/loginStatus", function(data){
-    if(data === "0"){
-      window.location.href='./login.html'
-      return;
-    }
-    else{
-      document.getElementById("accountInfo").innerHTML = data;
-    }
-  });               
-}
-
-var doLogout = function()
-{
-  var x = confirm("Logout now?")
-  if(x){
-    loadFile("./logout", function(d){window.location.reload()})
-  }
-}
-</script>
+   
     <body style="margin:0">
-       <div class='container'>
-  <!-- put app here -->
-  <div id='accountInfo'>
-  </div>
-</div>
-  <!-- put logout button anywhere -->
-<button onclick='doLogout()'>Logout</button> 
-        <!-- WebXR VRButton will appear here -->
-    </body>
+      </body>
+       
     <body onload='main()'>
 
 <div class='container'>
