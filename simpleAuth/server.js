@@ -47,7 +47,7 @@ app.get("/getProjects", function(req,res){
 })
 
 app.use(express.static(path.join(__dirname, 'public')));
-server.get("/", function (req, res) {
+app.get("/", function (req, res) {
     res.redirect("index.html")
 });
 
