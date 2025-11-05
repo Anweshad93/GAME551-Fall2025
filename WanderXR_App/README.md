@@ -63,7 +63,7 @@ It’s perfect for **students, teachers, and travelers**, helping them learn abo
 ---
 
 ## 🧾 License
-MIT License © 2025 — *Developed by [Your Name]*  
+MIT License © 2025 — *Developed by Anwesha Das*  
 Free to use, modify, and share for educational or non-commercial purposes.
 
 ---
