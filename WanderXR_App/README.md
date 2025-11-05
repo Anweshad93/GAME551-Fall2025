@@ -25,7 +25,7 @@ The app blends **education**, **exploration**, and **technology**, allowing user
 - **AR Framework:** WebXR API  
 - **3D Assets:** .glb models (Eiffel Tower, Taj Mahal, Statue of Liberty)  
 - **Hosting:** GitHub Pages  
-- **Design Tools:** Figma, Adobe Aero (for concept visualization)
+- **Design Tools:** Figma (for concept visualization)
 
 ---
 
