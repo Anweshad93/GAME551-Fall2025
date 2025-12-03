@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WanderXR — AR</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="ar">
+
+  <!-- Top bar: choose landmark + start AR -->
+  <div class="topbar">
+    <div class="brand">WanderXR</div>
+    <div class="picker">
+      <label>
+        <span>Landmark</span>
+        <select id="landmark-select">
+          <option value="eiffel">Eiffel Tower</option>
+          <option value="taj">Taj Mahal</option>
+        </select>
+      </label>
+      <button id="start-ar" class="btn primary">Start AR</button>
+    </div>
+  </div>
+
+  <!-- Info overlay -->
+  <div id="overlay" class="overlay hidden">
+    <div class="card">
+      <h3 id="fact-title">Title</h3>
+      <p id="fact-body">Fact text…</p>
+      <button id="close-fact" class="btn">Close</button>
+    </div>
+  </div>
+
+  <!-- WebGL / WebXR canvas -->
+  <canvas id="xr-canvas"></canvas>
+
+  <!-- Bottom action bar -->
+  <div class="bottombar">
+    <button id="place-btn" class="btn">Place</button>
+    <button id="info-btn" class="btn">Info</button>
+    <button id="snap-btn" class="btn">Snap</button>
+  </div>
+
+  <!-- Three.js + GLTFLoader -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.160.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <!-- App scripts -->
+  <script type="module" src="js/facts.js"></script>
+  <script type="module" src="js/app-ar.js"></script>
+</body>
+</html>
