@@ -6,7 +6,41 @@
   <title>WanderXR | Explore the World in AR</title>
 
   <style>
-    /* ------------------ BACKGROUND LAYERS ------------------ */
+    /* ------------------ BACKGROUND IMAGE LAYER ------------------ */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("assets/BG_OBJ_WanderXR.jpg") center/cover no-repeat;
+      z-index: -2; /* behind everything */
+      opacity: 1;  /* adjust if too strong (0.5–1.0) */
+    }
+
+    /* ------------------ ANIMATED GRADIENT OVERLAY ------------------ */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #0e5e6f, #1e88e5, #4bb3fd, #00bcd4);
+      background-size: 400% 400%;
+      animation: gradientShift 16s ease infinite;
+      opacity: 0.75; /* adjusts blend strength */
+      z-index: -1;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ------------------ LAYOUT ------------------ */
     body {
       margin: 0;
       font-family: "Arial", sans-serif;
@@ -18,33 +52,16 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
-
-      /* Your image as base background */
-      background-image: 
-          linear-gradient(135deg, rgba(247, 229, 130, 0.75), rgba(30,136,229,0.75), rgba(247, 131, 183, 0.75), rgba(0,188,212,0.75)),
-          url("assets/BG_OBJ_WanderXR.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-
-      /* animated gradient overlay */
-      animation: gradientShift 16s ease infinite;
-      background-blend-mode: overlay;
+      position: relative;
     }
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%, center; }
-      50% { background-position: 100% 50%, center; }
-      100% { background-position: 0% 50%, center; }
-    }
-
-    /* ------------------ GLOBE IMAGE ------------------ */
+    /* ------------------ GLOBE ------------------ */
     .globe {
       width: 180px;
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      animation: spinGlobe 12s linear infinite;
+      animation: spinGlobe 14s linear infinite;
       margin-bottom: 25px;
     }
 
@@ -65,7 +82,7 @@
       font-size: 1.3rem;
       max-width: 450px;
       line-height: 1.6;
-      opacity: 0.95;
+      opacity: 0.98;
       margin: 20px auto 40px;
       text-shadow: 0 2px 5px rgba(0,0,0,0.35);
     }
@@ -94,39 +111,26 @@
       position: absolute;
       bottom: 15px;
       font-size: 1rem;
-      opacity: 0.9;
+      opacity: 0.85;
       text-shadow: 0 2px 5px rgba(0,0,0,0.35);
-    }
-
-    /* ------------------ RESPONSIVE ------------------ */
-    @media (max-width: 600px) {
-      .globe { width: 130px; height: 130px; }
-      h1 { font-size: 2.5rem; }
-      p { font-size: 1.1rem; }
-      .btn { font-size: 1.2rem; padding: 16px 40px; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Realistic spinning globe -->
-  <img class="globe" src="assets/globe.png" alt="Rotating Earth">
+  <img class="globe" src="assets/globe.png" alt="Spinning Earth">
 
-  <!-- Title -->
   <h1>WanderXR</h1>
 
-  <!-- Subtitle -->
   <p>
-    Explore world landmarks in Augmented Reality! 
-    Discover, interact, and learn in your own space.
+    Explore world landmarks in Augmented Reality —  
+    discover, interact, and learn in your own space.
   </p>
 
-  <!-- Button -->
   <button class="btn" onclick="enterAR()">Enter AR Experience</button>
 
-  <!-- Footer -->
-  <div class="footer">© 2025 WanderXR • Created by AnweshaDas</div>
+  <div class="footer">© 2025 WanderXR • Created by You</div>
 
   <script>
     function enterAR() {
