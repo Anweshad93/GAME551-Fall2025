@@ -6,7 +6,7 @@
   <title>WanderXR | Explore the World in AR</title>
 
   <style>
-    /* ------------------ BACKGROUND ------------------ */
+    /* ------------------ BACKGROUND LAYERS ------------------ */
     body {
       margin: 0;
       font-family: "Arial", sans-serif;
@@ -19,26 +19,33 @@
       text-align: center;
       overflow: hidden;
 
-      background: linear-gradient(135deg, #f4e46b, #a1f3fa, #f06e81, #00bcd4);
-      background-size: 400% 400%;
+      /* Your image as base background */
+      background-image: 
+          linear-gradient(135deg, rgba(247, 229, 130, 0.75), rgba(30,136,229,0.75), rgba(247, 131, 183, 0.75), rgba(0,188,212,0.75)),
+          url("assets/BG_OBJ_WanderXR.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      /* animated gradient overlay */
       animation: gradientShift 16s ease infinite;
+      background-blend-mode: overlay;
     }
 
     @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% { background-position: 0% 50%, center; }
+      50% { background-position: 100% 50%, center; }
+      100% { background-position: 0% 50%, center; }
     }
 
-    /* ------------------ GLOBE ------------------ */
+    /* ------------------ GLOBE IMAGE ------------------ */
     .globe {
-      width: 170px;
-      height: 170px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
       animation: spinGlobe 12s linear infinite;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     @keyframes spinGlobe {
@@ -46,27 +53,27 @@
       to   { transform: rotate(360deg); }
     }
 
-    /* ------------------ TEXT ------------------ */
+    /* ------------------ TYPOGRAPHY ------------------ */
     h1 {
-      font-size: 3.4rem;
-      font-weight: bold;
+      font-size: 3.5rem;
       margin: 0;
-      text-shadow: 0 3px 6px rgba(0,0,0,0.25);
+      font-weight: bold;
+      text-shadow: 0 3px 6px rgba(0,0,0,0.4);
     }
 
     p {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       max-width: 450px;
       line-height: 1.6;
       opacity: 0.95;
       margin: 20px auto 40px;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.25);
+      text-shadow: 0 2px 5px rgba(0,0,0,0.35);
     }
 
     /* ------------------ BUTTON ------------------ */
     .btn {
       padding: 18px 50px;
-      background-color: #ffffff;
+      background-color: white;
       color: #0e5e6f;
       font-size: 1.4rem;
       border: none;
@@ -74,7 +81,7 @@
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s ease;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
     }
 
     .btn:hover {
@@ -88,30 +95,31 @@
       bottom: 15px;
       font-size: 1rem;
       opacity: 0.9;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.25);
+      text-shadow: 0 2px 5px rgba(0,0,0,0.35);
     }
 
+    /* ------------------ RESPONSIVE ------------------ */
     @media (max-width: 600px) {
       .globe { width: 130px; height: 130px; }
       h1 { font-size: 2.5rem; }
       p { font-size: 1.1rem; }
-      .btn { font-size: 1.2rem; padding: 15px 40px; }
+      .btn { font-size: 1.2rem; padding: 16px 40px; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Animated Globe -->
-  <img class="globe" src="assets/globe.png" alt="Earth Globe">
+  <!-- Realistic spinning globe -->
+  <img class="globe" src="assets/globe.png" alt="Rotating Earth">
 
   <!-- Title -->
   <h1>WanderXR</h1>
 
   <!-- Subtitle -->
   <p>
-    Explore world-famous landmarks in Augmented Reality!
-    Learn, interact, and travel the globe from your own space.
+    Explore world landmarks in Augmented Reality! 
+    Discover, interact, and learn in your own space.
   </p>
 
   <!-- Button -->
