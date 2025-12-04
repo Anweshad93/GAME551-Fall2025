@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WanderXR | Explore the World in AR</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #0e5e6f, #1e88e5);
+      color: white;
+      text-align: center;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 400px;
+      line-height: 1.5;
+      opacity: 0.9;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 15px 35px;
+      background-color: #ffffff;
+      color: #0e5e6f;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .btn:hover {
+      background-color: #e1f4f4;
+      transform: scale(1.05);
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.3rem; }
+      p { font-size: 1rem; }
+    }
+  </style>
+
+</head>
+<body>
+
+  <h1>🌍 WanderXR</h1>
+  <p>Experience world-famous landmarks in Augmented Reality —  
+     right from your own space.</p>
+
+  <button class="btn" onclick="enterAR()">Enter AR Experience</button>
+
+  <div class="footer">© 2025 WanderXR | Created by You</div>
+
+  <script>
+    function enterAR() {
+      window.location.href = "ar.html";
+    }
+  </script>
+
+</body>
+</html>
